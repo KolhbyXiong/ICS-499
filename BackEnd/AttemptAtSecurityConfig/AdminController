@@ -23,7 +23,7 @@ public class AdminController {
 
     @GetMapping(path = "{AdminId}")
     public Admin getAdmin (@pathVariable("AdminId") Integer adminid) {
-        return STUDENTS.stream()
+        return ADMINS.stream()
                 .filer(admin -> adminId.equals(admin.getAdminId()))
                 .findFirst()
                 .orElseThrow(() -> new IllegalStateException("Admin " + AdminId + "does not exist"));
