@@ -1,0 +1,27 @@
+package com.musicBackend.musicBackend.controllers.configurations;
+
+public class Admin {
+    private final Integer AdminId;
+    private final String FirstName;
+    private final String LastName;
+    private final String Email;
+
+    public Admin(Integer AdminId, String FirstName, String LastName, String Email) {
+        this.AdminId = AdminId;
+        this.FirstName = FirstName;
+        this.LastName = LastName;
+        this.Email = Email;
+    }
+    public Integer getAdminId() {
+        return AdminId;
+    }
+    public String getFirstName() {
+        return FirstName;
+    }
+    public String getLastName() {
+        return LastName;
+    }
+    public String getEmail() {
+        return Email;
+    }
+}
