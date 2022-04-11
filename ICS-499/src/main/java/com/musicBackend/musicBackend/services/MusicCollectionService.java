@@ -24,9 +24,9 @@ public class MusicCollectionService {
 
     public void addMusicCollection (MusicCollection musicCollection){
         Optional<MusicCollection> musicCollectionOptional = musicCollectionRepository.findMusicCollectionById(musicCollection.getId());
-        if (!musicCollectionOptional.isPresent()) {
+        /*if (!musicCollectionOptional.isPresent()) {
             throw new IllegalStateException("Music collection is being used");
-        }
+        }*/
         musicCollectionRepository.save(musicCollection);
         System.out.println(musicCollection);
     }
@@ -39,7 +39,7 @@ public class MusicCollectionService {
         musicCollectionRepository.deleteById(musicCollectionId);
     }
 
-    private MusicCollection getMusicCollection(Long musicCollectionId){
+    public MusicCollection getMusicCollection(Long musicCollectionId){
         Optional<MusicCollection> musicCollectionOptional = musicCollectionRepository.findMusicCollectionById(musicCollectionId);
         if (!musicCollectionOptional.isPresent()) {
             throw new IllegalStateException("Music collection doesn't exist");

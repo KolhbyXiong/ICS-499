@@ -25,8 +25,9 @@ public class MusicCollection {
     private Long id;
     private String name;
     @ManyToMany
-    @JsonIgnore
-    @JoinTable(name = "play_list_music_collection", joinColumns = @JoinColumn(name = "music_collection_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "play_list_id", referencedColumnName = "id"))
+//    @JsonIgnore
+//    @JoinTable(name = "play_list_music_collection", joinColumns = @JoinColumn(name = "music_collection_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "play_list_id", referencedColumnName = "id"))
+    @JoinColumn(name="playLists_id")
     private Set<PlayList> playLists;
 
     public MusicCollection(Long id, String name, Set<PlayList> playLists) {

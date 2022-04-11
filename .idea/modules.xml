@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ICS-499.iml" filepath="$PROJECT_DIR$/.idea/ICS-499.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ICS-499/musicBackend.iml" filepath="$PROJECT_DIR$/ICS-499/musicBackend.iml" />
     </modules>
   </component>
 </project>

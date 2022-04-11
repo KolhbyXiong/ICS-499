@@ -77,7 +77,7 @@ public class SearchMusicController {
 		musics.add(musicDetails);
 		return musics;
 	}
-	
+
 	@ResponseBody
 	@GetMapping("/getMusicByArtistId")
 	public Map<String,String> getMusicByArtistId(@RequestParam(name="ArtistId") long id) {

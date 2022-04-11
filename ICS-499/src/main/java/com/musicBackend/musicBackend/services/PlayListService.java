@@ -18,11 +18,11 @@ public class PlayListService {
         this.trackService = trackService;
     }
 
-    private PlayList getPlayList(Long playListId){
+    public PlayList getPlayList(Long playListId){
         Optional<PlayList> playListOptional = playListRepository.findPlayListById(playListId);
-        if (!playListOptional.isPresent()) {
+        /*if (!playListOptional.isPresent()) {
             throw new IllegalStateException("PlayList doesn't exist");
-        }
+        }*/
         return playListOptional.get();
     }
 
@@ -38,9 +38,9 @@ public class PlayListService {
 
     public void addPlayList (PlayList playList){
         Optional<PlayList> playListOptional = playListRepository.findPlayListById(playList.getId());
-        if (!playListOptional.isPresent()) {
+        /*if (!playListOptional.isPresent()) {
             throw new IllegalStateException("PlayList is being used");
-        }
+        }*/
         playListRepository.save(playList);
         System.out.println(playList);
     }

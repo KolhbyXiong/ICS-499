@@ -33,8 +33,8 @@ public class MusicCollectionController {
         return musicCollectionService.countOfPlaylistsInCollection(musicCollectionId);
     }
 
-    @GetMapping("/displayPlayListInCollection")
-    public Set<PlayList> displayPlayListInCollection(@RequestParam(name="musicCollectionId") long musicCollectionId) {
-        return musicCollectionService.displayPlayListInCollection(musicCollectionId);
+    @GetMapping("/getMusicCollection")
+    public MusicCollection getMusicCollection(@RequestParam(name="musicCollectionId") long musicCollectionId) {
+        return musicCollectionService.getMusicCollection(musicCollectionId);
     }
 }

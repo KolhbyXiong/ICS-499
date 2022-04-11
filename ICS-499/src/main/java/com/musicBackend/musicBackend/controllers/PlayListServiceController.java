@@ -20,8 +20,8 @@ public class PlayListServiceController {
         playListService.addPlayList(playList);
     }
 
-    @DeleteMapping(path = "{playListId}")
-    public void deletePermission(@PathVariable("playListId") Long playListId){
+    @DeleteMapping
+    public void deletePermission(@RequestParam("playListId") Long playListId){
         playListService.deletePlayList(playListId);
     }
 
@@ -38,6 +38,11 @@ public class PlayListServiceController {
     @GetMapping("/countsOfSongsInPlayList")
     public Integer countsOfSongsInPlayList(@RequestParam(name="playListId") long playListId) {
         return playListService.countsOfSongsInPlayList(playListId);
+    }
+
+    @GetMapping("/viewPlayList")
+    public PlayList viewPlayList(@RequestParam(name="playListId") long playListId) {
+        return playListService.getPlayList(playListId);
     }
 
 }
