@@ -1,11 +1,11 @@
 package com.musicBackend.musicBackend.controllers;
-
+import org.springframework.ui.Model;
 import com.musicBackend.musicBackend.models.PlayList;
 import com.musicBackend.musicBackend.services.PlayListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-@RestController
+import org.springframework.stereotype.Controller;
+@Controller
 @RequestMapping(path = "/playList")
 public class PlayListServiceController {
     private final PlayListService playListService;
@@ -16,13 +16,19 @@ public class PlayListServiceController {
     }
 
     @PostMapping
-    public void addMusicCollection(@RequestBody PlayList playList) {
+    public String addMusicCollection(Model model) {
+        PlayList playList = new PlayList();
+        model.addAttribute("playlist",playList);
         playListService.addPlayList(playList);
+        //In the "return" section, it is returning to the html page that you specify
+        //The html page you specify must be placed under the resources/templates folder
+        return "playListHome";
     }
 
-    @DeleteMapping(path = "{playListId}")
-    public void deletePermission(@PathVariable("playListId") Long playListId){
+    @DeleteMapping(path = "/deletePlayList/{playListId}")
+    public String deletePermission(@PathVariable("playListId") Long playListId){
         playListService.deletePlayList(playListId);
+        return "playList";
     }
 
     @GetMapping("/addSongToPlayList")
