@@ -16,8 +16,8 @@ public class MusicCollectionService {
     private final PlayListService playListService;
 
     @Autowired
-    public MusicCollectionService(com.musicBackend.musicBackend.repositories.MusicCollectionRepository musicCollectionRepository,
-                                  com.musicBackend.musicBackend.services.PlayListService playListService) {
+    public MusicCollectionService(MusicCollectionRepository musicCollectionRepository,
+                                  PlayListService playListService) {
         this.musicCollectionRepository = musicCollectionRepository;
         this.playListService = playListService;
     }
