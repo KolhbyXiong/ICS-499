@@ -1,5 +1,5 @@
 package com.musicBackend.musicBackend.controllers;
-
+import org.springframework.ui.Model;
 import com.musicBackend.musicBackend.models.Artist;
 import com.musicBackend.musicBackend.models.Genre;
 import com.musicBackend.musicBackend.models.Music;
@@ -9,7 +9,7 @@ import com.musicBackend.musicBackend.services.MusicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.stereotype.Controller;
 import java.util.*;
 
 @RequestMapping("/searchMusic")
